@@ -32,6 +32,12 @@ gem 'rack-cors'
 # Use environment variables to protect sensitive data
 gem 'dotenv-rails'
 
+# Enable JSON web tokens for user authentication
+gem 'jwt', '~>2.2.1'
+
+# Add Active model serializers for JSON response formatting
+gem 'active_model_serializers'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'faker', '~> 2.10.2'
