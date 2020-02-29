@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  concern :user_endpoints do
+    post 'users/register', to: 'users#register'
+    post 'users/login', to: 'users#login'
+  end
+
+  namespace :api do
+    namespace :v1 do
+      concerns :user_endpoints
+    end
+  end
 end
