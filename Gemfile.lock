@@ -245,6 +245,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.0.2, >= 6.0.2.1)
   rspec-rails (~> 3.5)
+  rubocop (~> 0.80.0)
   solargraph
   spring
   spring-watcher-listen (~> 2.0.0)

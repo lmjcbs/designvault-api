@@ -23,3 +23,6 @@
 
 # Ignore environment variables
 .env
+
+# Ignore rubocop extended rules
+.rubocop.yml
