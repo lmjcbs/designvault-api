@@ -30,6 +30,9 @@ gem 'rack-cors'
 gem 'dotenv-rails'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails', '~> 5.1.1'
+  gem 'faker', '~> 2.10.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -40,7 +43,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # ruby language server
-  gem 'solargraph', group: :development
+  gem 'solargraph'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
