@@ -17,7 +17,7 @@ class AccessToken
 
     def get_user_from_token(token)
       begin
-        response = self.decode(token)
+        response = decode(token)
       rescue JWT::VerificationError
         return nil
       end
