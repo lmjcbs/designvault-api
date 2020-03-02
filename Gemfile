@@ -38,6 +38,9 @@ gem 'jwt', '~>2.2.1'
 # Add Active model serializers for JSON response formatting
 gem 'active_model_serializers'
 
+# Use fast JSON API to serialize json repsonses
+gem 'fast_jsonapi'
+
 group :development, :test do
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'faker', '~> 2.10.2'
