@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  concern :user_endpoints do
-    post 'users/register', to: 'users#register'
-    post 'users/login', to: 'users#login'
+  concern :session_endpoints do
+    post '/login', to: 'sessions#login'
+    post '/logout', to: 'sessions#logout'
+    post '/authenticate', to: 'sessions#authenticate'
   end
 
-  namespace :api do
-    namespace :v1 do
-      concerns :user_endpoints
-    end
+  concern :user_endpoints do
+    post '/signup', to: 'users#create'
   end
+  
+  concerns :session_endpoints, :user_endpoints 
 end
