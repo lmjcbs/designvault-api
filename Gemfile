@@ -33,7 +33,7 @@ gem 'rack-cors'
 gem 'dotenv-rails'
 
 # Enable JSON web tokens for user authentication
-gem 'jwt', '~>2.2.1'
+# gem 'jwt', '~>2.2.1'
 
 # Add Active model serializers for JSON response formatting
 gem 'active_model_serializers'
