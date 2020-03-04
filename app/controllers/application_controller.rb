@@ -2,15 +2,20 @@
 
 class ApplicationController < ActionController::API
   include ::ActionController::Cookies
+  before_action :authenticate_request!
 
-  before_action :authenticate_request
+  def authenticate_request!
+    if cookies.signed[:session_user].blank?
+      render json: { errors: 'Unauthorized' }
+    else
+      user_id = cookies.signed[:session_user]
+      @current_user = User.find(user_id)
+    end
+  end
 
   private
 
-  def authenticate_request
-    auth_header = request.headers['Authorization']
-    auth_header_token = auth_header.gsub(/^Bearer /, '') if auth_header
-    @current_user = AccessToken.get_user_from_token(auth_header_token)
-    render json: { error: 'Not Authorized' }, status: 401 unless @current_user
+  def current_user
+    @current_user
   end
 end
